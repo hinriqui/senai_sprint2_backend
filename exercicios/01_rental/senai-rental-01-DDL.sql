@@ -1,0 +1,49 @@
+CREATE DATABASE M_Rental;
+GO
+
+USE M_Rental;
+GO
+
+CREATE TABLE Empresa(
+	idEmpresa SMALLINT PRIMARY KEY IDENTITY(1,1),
+	nomeEmpresa VARCHAR(20) NOT NULL UNIQUE
+);
+GO
+
+CREATE TABLE Marca(
+	idMarca SMALLINT PRIMARY KEY IDENTITY(1,1),
+	nomeMarca VARCHAR(20) NOT NULL UNIQUE
+);
+GO
+
+CREATE TABLE Modelo(
+	idModelo INT PRIMARY KEY IDENTITY(1,1),
+	idMarca SMALLINT FOREIGN KEY REFERENCES Marca(idMarca),
+	nomeModelo VARCHAR(20) NOT NULL
+);
+GO
+
+CREATE TABLE Cliente(
+	idCliente INT PRIMARY KEY IDENTITY(1,1),
+	nomeCliente VARCHAR(20) NOT NULL,
+	Sobrenome VARCHAR(50) NOT NULL,
+	cpfCliente VARCHAR(10) NOT NULL UNIQUE
+);
+GO
+
+CREATE TABLE Aluguel(
+	idAluguel INT PRIMARY KEY IDENTITY(1,1),
+	idCliente INT FOREIGN KEY REFERENCES Cliente(idCliente),
+	dataRetirada DATETIME,
+	dataDevolucao DATETIME
+);
+GO
+
+CREATE TABLE Veiculo(
+	idVeiculo INT PRIMARY KEY IDENTITY(1,1),
+	idEmpresa SMALLINT FOREIGN KEY REFERENCES Empresa(idEmpresa),
+	idModelo INT FOREIGN KEY REFERENCES Modelo(idModelo),
+	idAluguel INT FOREIGN KEY REFERENCES Aluguel(idAluguel),
+	placaVeiculo VARCHAR(7) NOT NULL,
+);
+GO
