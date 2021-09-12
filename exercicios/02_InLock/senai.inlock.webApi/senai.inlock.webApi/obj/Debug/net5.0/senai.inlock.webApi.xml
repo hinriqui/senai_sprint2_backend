@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.inlock.webApi</name>
+    </assembly>
+    <members>
+        <member name="M:senai.inlock.webApi.Controllers.JogosController.Get">
+            <summary>
+            Retorna todos os jogos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Controllers.JogosController.Post(senai.inlock.webApi.Domains.JogoDomain)">
+            <summary>
+            Cadastra um novo jogo
+            </summary>
+            <param name="novoJogo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Controllers.UsuariosController.Login(senai.inlock.webApi.Domains.UsuarioDomain)">
+            <summary>
+            Loga o usuário e retorna o código de autenticação
+            </summary>
+            <param name="login"></param>
+            <returns></returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Interfaces.IJogoRepository.ListarTodos">
+            <summary>
+            Retorna todos os jogos
+            </summary>
+            <returns>Uma lista de jogos</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Interfaces.IJogoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Retorna o jogo com respectivo id
+            </summary>
+            <param name="id">Id do jogo</param>
+            <returns>Um objeto da classe jogo</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Interfaces.IJogoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta o jogo com respectivo id
+            </summary>
+            <param name="id">Id do jogo</param>
+        </member>
+        <member name="M:senai.inlock.webApi.Interfaces.IJogoRepository.AtualizarIdCorpo(senai.inlock.webApi.Domains.JogoDomain)">
+            <summary>
+            Atualiza o jogo com respectivo id
+            </summary>
+            <param name="jogoAtualizado">Objeto jogo atualizado</param>
+        </member>
+        <member name="M:senai.inlock.webApi.Interfaces.IJogoRepository.Cadastrar(senai.inlock.webApi.Domains.JogoDomain)">
+            <summary>
+            Cadastra o novo objeto jogo
+            </summary>
+            <param name="novoJogo">Novo objeto jogo</param>
+        </member>
+        <member name="M:senai.inlock.webApi.Interfaces.IUsuarioRepository.BuscarPorEmailSenha(System.String,System.String)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="email"></param>
+            <param name="senha"></param>
+            <returns>Um objeto do tipo UsuarioDomain que foi buscado</returns>
+        </member>
+    </members>
+</doc>

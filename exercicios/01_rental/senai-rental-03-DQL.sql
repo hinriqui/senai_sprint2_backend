@@ -1,4 +1,4 @@
-USE LOCADORA
+USE M_Rental
 
 SELECT dataRetirada, dataDevolucao, nomeCliente, nomeModelo, nomeMarca FROM Aluguel
 LEFT JOIN Cliente
@@ -20,3 +20,5 @@ ON Veiculo.idModelo = Modelo.idModelo
 LEFT JOIN Marca
 ON Modelo.idMarca = Marca.idMarca
 WHERE Cliente.nomeCliente = 'Saulo'
+
+SELECT * FROM Cliente
