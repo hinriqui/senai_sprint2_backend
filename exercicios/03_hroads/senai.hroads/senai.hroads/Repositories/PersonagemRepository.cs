@@ -36,7 +36,7 @@ namespace senai.hroads.Repositories
 
         public void Update(int id, Personagem novoPersonagem)
         {
-            Personagem PersonagemBuscado = ctx.Personagems.FirstOrDefault(id);
+            Personagem PersonagemBuscado = ctx.Personagems.FirstOrDefault(u => u.IdPerso == id);
 
             if (PersonagemBuscado.NomePerso != null)
             {

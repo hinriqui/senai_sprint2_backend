@@ -36,7 +36,7 @@ namespace senai.hroads.Repositories
 
         public void Update(int id, Classe novoClasse)
         {
-            Classe ClasseBuscado = ctx.Classes.FirstOrDefault(id);
+            Classe ClasseBuscado = ctx.Classes.FirstOrDefault(u => u.IdClasse == id);
 
             if (ClasseBuscado.NomeClasse != null)
             {

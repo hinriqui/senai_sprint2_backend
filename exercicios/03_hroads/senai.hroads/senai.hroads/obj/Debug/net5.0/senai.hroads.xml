@@ -1,0 +1,418 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.hroads</name>
+    </assembly>
+    <members>
+        <member name="M:senai.hroads.Controllers.ClassesController.LerTudo">
+            <summary>
+            Lê tudo
+            </summary>
+            <returns>Lista de todos os objetos</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.ClassesController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca objeto atráves do ID
+            </summary>
+            <returns>Lista apenas o objeto selecionado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.ClassesController.Cadastrar(senai.hroads.Domains.Classe)">
+            <summary>
+            Cadastra um objeto
+            </summary>
+            <returns>Cadastra o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.ClassesController.Atualizar(System.Int32,senai.hroads.Domains.Classe)">
+            <summary>
+            Atualiza um objeto
+            </summary>
+            <returns>Atualiza o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.ClassesController.Deletar(System.Int32)">
+            <summary>
+            Deleta um objeto
+            </summary>
+            <returns>Deleta o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.ClassesHabilidadesController.LerTudo">
+            <summary>
+            Lê tudo
+            </summary>
+            <returns>Lista de todos os objetos</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.ClassesHabilidadesController.Cadastrar(senai.hroads.Domains.ClasseHabilidade)">
+            <summary>
+            Cadastra um objeto
+            </summary>
+            <returns>Cadastra o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.ClassesHabilidadesController.Deletar(senai.hroads.Domains.ClasseHabilidade)">
+            <summary>
+            Deleta um objeto
+            </summary>
+            <returns>Deleta o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.HabilidadesController.LerTudo">
+            <summary>
+            Lê tudo
+            </summary>
+            <returns>Lista de todos os objetos</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.HabilidadesController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca objeto atráves do ID
+            </summary>
+            <returns>Lista apenas o objeto selecionado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.HabilidadesController.Cadastrar(senai.hroads.Domains.Habilidade)">
+            <summary>
+            Cadastra um objeto
+            </summary>
+            <returns>Cadastra o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.HabilidadesController.Atualizar(System.Int32,senai.hroads.Domains.Habilidade)">
+            <summary>
+            Atualiza um objeto
+            </summary>
+            <returns>Atualiza o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.HabilidadesController.Deletar(System.Int32)">
+            <summary>
+            Deleta um objeto
+            </summary>
+            <returns>Deleta o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.PersonagensController.LerTudo">
+            <summary>
+            Lê tudo
+            </summary>
+            <returns>Lista de todos os objetos</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.PersonagensController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca objeto atráves do ID
+            </summary>
+            <returns>Lista apenas o objeto selecionado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.PersonagensController.Cadastrar(senai.hroads.Domains.Personagem)">
+            <summary>
+            Cadastra um objeto
+            </summary>
+            <returns>Cadastra o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.PersonagensController.Atualizar(System.Int32,senai.hroads.Domains.Personagem)">
+            <summary>
+            Atualiza um objeto
+            </summary>
+            <returns>Atualiza o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.PersonagensController.Deletar(System.Int32)">
+            <summary>
+            Deleta um objeto
+            </summary>
+            <returns>Deleta o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.TiposHabController.LerTudo">
+            <summary>
+            Lê tudo
+            </summary>
+            <returns>Lista de todos os objetos</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.TiposHabController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca objeto atráves do ID
+            </summary>
+            <returns>Lista apenas o objeto selecionado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.TiposHabController.Cadastrar(senai.hroads.Domains.TipoHab)">
+            <summary>
+            Cadastra um objeto
+            </summary>
+            <returns>Cadastra o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.TiposHabController.Atualizar(System.Int32,senai.hroads.Domains.TipoHab)">
+            <summary>
+            Atualiza um objeto
+            </summary>
+            <returns>Atualiza o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.TiposHabController.Deletar(System.Int32)">
+            <summary>
+            Deleta um objeto
+            </summary>
+            <returns>Deleta o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.TiposUsuarioController.LerTudo">
+            <summary>
+            Lê tudo
+            </summary>
+            <returns>Lista de todos os objetos</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.TiposUsuarioController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca objeto atráves do ID
+            </summary>
+            <returns>Lista apenas o objeto selecionado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.TiposUsuarioController.Cadastrar(senai.hroads.Domains.TipoUsuario)">
+            <summary>
+            Cadastra um objeto
+            </summary>
+            <returns>Cadastra o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.TiposUsuarioController.Atualizar(System.Int32,senai.hroads.Domains.TipoUsuario)">
+            <summary>
+            Atualiza um objeto
+            </summary>
+            <returns>Atualiza o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.TiposUsuarioController.Deletar(System.Int32)">
+            <summary>
+            Deleta um objeto
+            </summary>
+            <returns>Deleta o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.UsuariosController.Cadastrar(senai.hroads.Domains.Usuario)">
+            <summary>
+            Cadastra um objeto
+            </summary>
+            <returns>Cadastra o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.UsuariosController.LerTudo">
+            <summary>
+            Lê tudo
+            </summary>
+            <returns>Lista de todos os objetos</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.UsuariosController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca objeto atráves do ID
+            </summary>
+            <returns>Lista apenas o objeto selecionado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.UsuariosController.Atualizar(System.Int32,senai.hroads.Domains.Usuario)">
+            <summary>
+            Atualiza um objeto
+            </summary>
+            <returns>Atualiza o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Controllers.UsuariosController.Deletar(System.Int32)">
+            <summary>
+            Deleta um objeto
+            </summary>
+            <returns>Deleta o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IClasseHabilidadeRepository.Create(senai.hroads.Domains.ClasseHabilidade)">
+            <summary>
+            Cadastra uma nova relação classe-habilidade
+            </summary>
+            <param name="novaClasseHabilidade">Objeto classe-habilidade</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IClasseHabilidadeRepository.ReadAll">
+            <summary>
+            Lê todos os objetos cadastrados
+            </summary>
+            <returns>Lista de objetos cadastrados</returns>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IClasseHabilidadeRepository.Delete(senai.hroads.Domains.ClasseHabilidade)">
+            <summary>
+            Deleta o objeto com o id especificado
+            </summary>
+            <param name="novaClasseHabilidade">Objeto a ser excluído</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IClasseRepository.Create(senai.hroads.Domains.Classe)">
+            <summary>
+            Cadastra uma nova classe
+            </summary>
+            <param name="novoClasse">Objeto classe</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IClasseRepository.ReadAll">
+            <summary>
+            Lê todos os objetos cadastrados
+            </summary>
+            <returns>Lista de objetos cadastrados</returns>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IClasseRepository.ReadById(System.Int32)">
+            <summary>
+            Lê o objeto com o id especificado
+            </summary>
+            <param name="id">Id do objeto a ser retornado</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IClasseRepository.Update(System.Int32,senai.hroads.Domains.Classe)">
+            <summary>
+            Atualiza as informações do objeto com o id especificado
+            </summary>
+            <param name="id">Id do objeto a ser atualizado</param>
+            <param name="novaClasse">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IClasseRepository.Delete(senai.hroads.Domains.Classe)">
+            <summary>
+            Deleta o objeto com o id especificado
+            </summary>
+            <param name="novaClasse">Objeto a ser excluído</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IHabilidadeRepository.Create(senai.hroads.Domains.Habilidade)">
+            <summary>
+            Cadastra uma nova habilidade
+            </summary>
+            <param name="novoHabilidade">Objeto habilidade</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IHabilidadeRepository.ReadAll">
+            <summary>
+            Lê todos os objetos cadastrados
+            </summary>
+            <returns>Lista de objetos cadastrados</returns>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IHabilidadeRepository.ReadById(System.Int32)">
+            <summary>
+            Lê o objeto com o id especificado
+            </summary>
+            <param name="id">Id do objeto a ser retornado</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IHabilidadeRepository.Update(System.Int32,senai.hroads.Domains.Habilidade)">
+            <summary>
+            Atualiza as informações do objeto com o id especificado
+            </summary>
+            <param name="id">Id do objeto a ser atualizado</param>
+            <param name="novoHabilidade">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IHabilidadeRepository.Delete(senai.hroads.Domains.Habilidade)">
+            <summary>
+            Deleta o objeto com o id especificado
+            </summary>
+            <param name="novaHabilidade">Objeto a ser excluído</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IPersonagemRepository.Create(senai.hroads.Domains.Personagem)">
+            <summary>
+            Cadastra um novo personagem
+            </summary>
+            <param name="novoPersonagem">Objeto personagem</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IPersonagemRepository.ReadAll">
+            <summary>
+            Lê todos os objetos cadastrados
+            </summary>
+            <returns>Lista de objetos cadastrados</returns>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IPersonagemRepository.ReadById(System.Int32)">
+            <summary>
+            Lê o objeto com o id especificado
+            </summary>
+            <param name="id">Id do objeto a ser retornado</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IPersonagemRepository.Update(System.Int32,senai.hroads.Domains.Personagem)">
+            <summary>
+            Atualiza as informações do objeto com o id especificado
+            </summary>
+            <param name="id">Id do objeto a ser atualizado</param>
+            <param name="novoPersonagem">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IPersonagemRepository.Delete(senai.hroads.Domains.Personagem)">
+            <summary>
+            Deleta o objeto com o id especificado
+            </summary>
+            <param name="novoPersonagem">Objeto a ser excluído</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.ITipoHabRepository.Create(senai.hroads.Domains.TipoHab)">
+            <summary>
+            Cadastra um novo tipo de habilidade
+            </summary>
+            <param name="novoTipoHab">Objeto tipo de habilidade</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.ITipoHabRepository.ReadAll">
+            <summary>
+            Lê todos os objetos cadastrados
+            </summary>
+            <returns>Lista de objetos cadastrados</returns>
+        </member>
+        <member name="M:senai.hroads.Interfaces.ITipoHabRepository.ReadById(System.Int32)">
+            <summary>
+            Lê o objeto com o id especificado
+            </summary>
+            <param name="id">Id do objeto a ser retornado</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.ITipoHabRepository.Update(System.Int32,senai.hroads.Domains.TipoHab)">
+            <summary>
+            Atualiza as informações do objeto com o id especificado
+            </summary>
+            <param name="id">Id do objeto a ser atualizado</param>
+            <param name="novoTipoHab">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.ITipoHabRepository.Delete(senai.hroads.Domains.TipoHab)">
+            <summary>
+            Deleta o objeto com o id especificado
+            </summary>
+            <param name="novoTipoHabilidade">Objeto a ser excluído</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.ITipoUsuarioRepository.Create(senai.hroads.Domains.TipoUsuario)">
+            <summary>
+            Cadastra um novo tipo de usuário
+            </summary>
+            <param name="novoTipoUsuario">Objeto tipo de usuário</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.ITipoUsuarioRepository.ReadAll">
+            <summary>
+            Lê todos os objetos cadastrados
+            </summary>
+            <returns>Lista de objetos cadastrados</returns>
+        </member>
+        <member name="M:senai.hroads.Interfaces.ITipoUsuarioRepository.ReadById(System.Int32)">
+            <summary>
+            Lê o objeto com o id especificado
+            </summary>
+            <param name="id">Id do objeto a ser retornado</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.ITipoUsuarioRepository.Update(System.Int32,senai.hroads.Domains.TipoUsuario)">
+            <summary>
+            Atualiza as informações do objeto com o id especificado
+            </summary>
+            <param name="id">Id do objeto a ser atualizado</param>
+            <param name="novoTipoUsuario">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.ITipoUsuarioRepository.Delete(senai.hroads.Domains.TipoUsuario)">
+            <summary>
+            Deleta o objeto com o id especificado
+            </summary>
+            <param name="novoTipoUsuario">Objeto a ser excluído</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IUsuarioRepository.Create(senai.hroads.Domains.Usuario)">
+            <summary>
+            Cadastra um novo usuário
+            </summary>
+            <param name="novoUsuario">Objeto usuário</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IUsuarioRepository.SearchAccount(System.String,System.String)">
+            <summary>
+            Busca por um usuário com respectivos email e senha
+            </summary>
+            <param name="email">Email do usuário</param>
+            <param name="senha">Senha do usuário</param>
+            <returns>O objeto usuário</returns>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IUsuarioRepository.ReadAll">
+            <summary>
+            Lê todos os objetos cadastrados
+            </summary>
+            <returns>Lista de objetos cadastrados</returns>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IUsuarioRepository.ReadById(System.Int32)">
+            <summary>
+            Lê o objeto com o id especificado
+            </summary>
+            <param name="id">Id do objeto a ser retornado</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IUsuarioRepository.Update(System.Int32,senai.hroads.Domains.Usuario)">
+            <summary>
+            Atualiza as informações do objeto com o id especificado
+            </summary>
+            <param name="id">Id do objeto a ser atualizado</param>
+            <param name="novoUsuario">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai.hroads.Interfaces.IUsuarioRepository.Delete(System.Int32)">
+            <summary>
+            Deleta o objeto com o id especificado
+            </summary>
+            <param name="novoUsuario">Objeto a ser excluído</param>
+        </member>
+    </members>
+</doc>

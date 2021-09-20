@@ -36,7 +36,7 @@ namespace senai.hroads.Repositories
 
         public void Update(int id, TipoUsuario novoTipoUsuario)
         {
-            TipoUsuario TipoUsuarioBuscado = ctx.TipoUsuarios.FirstOrDefault(id);
+            TipoUsuario TipoUsuarioBuscado = ctx.TipoUsuarios.FirstOrDefault(u => u.IdTipoUsuario == id);
 
             if (TipoUsuarioBuscado.Titulo != null)
             {

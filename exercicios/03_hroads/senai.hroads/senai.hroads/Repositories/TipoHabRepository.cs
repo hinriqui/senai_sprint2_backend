@@ -36,7 +36,7 @@ namespace senai.hroads.Repositories
 
         public void Update(int id, TipoHab novoTipoHab)
         {
-            TipoHab TipoHabBuscado = ctx.TipoHabs.FirstOrDefault(id);
+            TipoHab TipoHabBuscado = ctx.TipoHabs.FirstOrDefault(u => u.IdTipo == id);
 
             if (TipoHabBuscado.NomeTipo != null)
             {

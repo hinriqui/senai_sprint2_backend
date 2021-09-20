@@ -23,12 +23,20 @@ namespace senai.hroads.Controllers
             _classeHabilidadeRepository = new ClasseHabilidadeRepository();
         }
 
+        /// <summary>
+        /// Lê tudo
+        /// </summary>
+        /// <returns>Lista de todos os objetos</returns>
         [HttpGet]
         public IActionResult LerTudo()
         {
             return Ok(_classeHabilidadeRepository.ReadAll());
         }
 
+        /// <summary>
+        /// Cadastra um objeto
+        /// </summary>
+        /// <returns>Cadastra o objeto solicitado</returns>
         [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(ClasseHabilidade ClasseHabilidade)
@@ -37,8 +45,12 @@ namespace senai.hroads.Controllers
             return StatusCode(201);
         }
 
+        /// <summary>
+        /// Deleta um objeto
+        /// </summary>
+        /// <returns>Deleta o objeto solicitado</returns>
         [Authorize(Roles = "1")]
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult Deletar(ClasseHabilidade ClasseHabilidade)
         {
             _classeHabilidadeRepository.Delete(ClasseHabilidade);

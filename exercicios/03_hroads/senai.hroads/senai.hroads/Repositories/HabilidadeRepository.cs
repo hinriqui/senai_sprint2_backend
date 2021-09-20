@@ -36,7 +36,7 @@ namespace senai.hroads.Repositories
 
         public void Update(int id, Habilidade novoHabilidade)
         {
-            Habilidade HabilidadeBuscado = ctx.Habilidades.FirstOrDefault(id);
+            Habilidade HabilidadeBuscado = ctx.Habilidades.FirstOrDefault(u => u.IdHab == id);
 
             if (HabilidadeBuscado.NomeHab != null)
             {
