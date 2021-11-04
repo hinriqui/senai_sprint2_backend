@@ -34,6 +34,14 @@ namespace senai.spmedicalgroup.webApi.Interfaces
         void Atualizar(UsuarioRepository objAtualizado);
 
         /// <summary>
+        /// Verifica se email e senha estão cadastrados
+        /// </summary>
+        /// <param name="email">Email</param>
+        /// <param name="senha">Senha</param>
+        /// <returns></returns>
+        UsuarioRepository Login(string email, string senha);
+
+        /// <summary>
         /// Cadastra um novo objeto
         /// </summary>
         /// <param name="objAtualizado">Novo objeto</param>

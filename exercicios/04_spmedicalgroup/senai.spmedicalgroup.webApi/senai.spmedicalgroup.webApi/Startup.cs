@@ -28,12 +28,23 @@ namespace senai.spmedicalgroup.webApi
                     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                 });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorPolicy",
+                                builder =>
+                                {
+                                    builder.WithOrigins("http://localhost:3000")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
+                                });
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Hroads.webApi"
+                    Title = "spMedGroup.webApi"
 
                 });
 
@@ -60,13 +71,13 @@ namespace senai.spmedicalgroup.webApi
 
                         ValidateLifetime = true,
 
-                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("elanaomerespondeuatehoje")),
+                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("chave-autenticacao")),
 
-                        ClockSkew = TimeSpan.FromMinutes(40),
+                        ClockSkew = TimeSpan.FromHours(8),
 
-                        ValidIssuer = "HRoads.webAPI",
+                        ValidIssuer = "spMedGroup.webAPI",
 
-                        ValidAudience = "HRoads.webAPI"
+                        ValidAudience = "spMedGroup.webAPI"
                     };
                 });
         }
@@ -88,6 +99,8 @@ namespace senai.spmedicalgroup.webApi
             });
 
             app.UseRouting();
+
+            app.UseCors("CorPolicy");
 
             app.UseAuthentication();
 

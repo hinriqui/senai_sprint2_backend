@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai.spmedicalgroup.webApi.Domains;
 using senai.spmedicalgroup.webApi.Interfaces;
@@ -25,6 +26,7 @@ namespace senai.spmedicalgroup.webApi.Controllers
         /// Lê todos os objetos cadastrados
         /// </summary>
         /// <returns>Lista de todos os objetos</returns>
+        [Authorize(Roles = "ADM")]
         [HttpGet]
         public IActionResult LerTudo()
         {
@@ -35,6 +37,7 @@ namespace senai.spmedicalgroup.webApi.Controllers
         /// Lê todas as consultas cadastrados para esse médico
         /// </summary>
         /// <returns>Lista de todos os objetos</returns>
+        [Authorize(Roles = "MED")]
         [HttpGet("med/{email}")]
         public IActionResult LerMed(string email)
         {
@@ -46,21 +49,12 @@ namespace senai.spmedicalgroup.webApi.Controllers
         /// Lê todas as consultas cadastrados para esse médico
         /// </summary>
         /// <returns>Lista de todos os objetos</returns>
+        [Authorize(Roles = "MED")]
         [HttpGet("pac/{email}")]
         public IActionResult LerPac(string email)
         {
             Repositories.PacienteRepository p = new Repositories.PacienteRepository();
             return Ok(_Repository.ListarPorPac(p.BuscarPorEmail(email).IdPaciente));
-        }
-
-        /// <summary>
-        /// Busca objeto atráves do ID
-        /// </summary>
-        /// <returns>Lista apenas o objeto selecionado</returns>
-        [HttpGet("{id}")]
-        public IActionResult BuscarPorId(int id)
-        {
-            return Ok(_Repository.BuscarPorId(id));
         }
 
         /// <summary>
@@ -79,9 +73,10 @@ namespace senai.spmedicalgroup.webApi.Controllers
         /// </summary>
         /// <returns>Atualiza o objeto solicitado</returns>
         [HttpPut("{id}")]
-        public IActionResult Atualizar(int id, Consultum obj)
+        public IActionResult AtualizarDescricao(Consultum obj, string descricao)
         {
-            _Repository.Atualizar(id, obj);
+            obj.Descricao = descricao;
+            _Repository.Atualizar(obj.IdConsulta, obj);
             return StatusCode(204);
         }
 

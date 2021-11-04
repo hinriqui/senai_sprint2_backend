@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using senai.spmedicalgroup.webApi.Domains;
 using senai.spmedicalgroup.webApi.Interfaces;
-using senai.spmedicalgroup.webApi.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +11,13 @@ namespace senai.spmedicalgroup.webApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MedicosController : ControllerBase
+    public class PacienteController : ControllerBase
     {
-        private IMedicoRepository _Repository { get; set; }
+        private IPacienteRepository _Repository { get; set; }
 
-        public MedicosController()
+        public PacienteController()
         {
-            _Repository = new MedicoRepository();
+            _Repository = new Repositories.PacienteRepository();
         }
 
         /// <summary>
@@ -32,6 +30,5 @@ namespace senai.spmedicalgroup.webApi.Controllers
         {
             return Ok(_Repository.ListarTodos());
         }
-
     }
 }

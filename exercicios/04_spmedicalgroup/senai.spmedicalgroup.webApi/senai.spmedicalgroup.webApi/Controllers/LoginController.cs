@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using senai.spmedicalgroup.webApi.Interfaces;
 using senai.spmedicalgroup.webApi.Repositories;
-using senai.spmedicalgroup.webApi.
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
 
 namespace senai.spmedicalgroup.webApi.Controllers
 {
@@ -29,41 +31,32 @@ namespace senai.spmedicalgroup.webApi.Controllers
         /// <returns>Retorna um token com as informações do usuário</returns>
         /// dominio/api/Login
         [HttpPost]
-        public IActionResult Login(LoginViewModel login)
+        public IActionResult Login(string email, string senha)
         {
             try
             {
-                Usuario usuarioBuscado = _usuarioRepository.Login(login.Email, login.Senha);
+                Domains.UsuarioRepository usuarioBuscado = _usuarioRepository.Login(email, senha);
 
                 if (usuarioBuscado == null)
                 {
                     return BadRequest("E-mail ou senha inválidos!");
                 }
 
-                // Caso o usuário seja encontrado, prossegue para a criação do token
-
-                /*
-                    Dependências
-                    Criar e validar o JWT:      System.IdentityModel.Tokens.Jwt
-                    Integrar a autenticação:    Microsoft.AspNetCore.Authentication.JwtBearer (versão compatível com o .NET do projeto)
-                */
-
                 var minhasClaims = new[]
                 {
                     new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
-                    new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
-                    new Claim(ClaimTypes.Role, usuarioBuscado.IdTipoUsuario.ToString())
+                    new Claim(ClaimTypes.Role, usuarioBuscado.TipoUsuario.ToString())
                 };
 
-                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("gufi-chave-autenticacao"));
+                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("chave-autenticacao"));
 
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
                 var meuToken = new JwtSecurityToken(
-                        issuer: "gufi.webAPI",
-                        audience: "gufi.webAPI",
+                        issuer: "spMedGroup.webAPI",
+                        audience: "spMedGroup.webAPI",
                         claims: minhasClaims,
-                        expires: DateTime.Now.AddMinutes(30),
+                        expires: DateTime.Now.AddHours(8),
                         signingCredentials: creds
                     );
 
@@ -78,5 +71,4 @@ namespace senai.spmedicalgroup.webApi.Controllers
             }
         }
     }
-}
 }

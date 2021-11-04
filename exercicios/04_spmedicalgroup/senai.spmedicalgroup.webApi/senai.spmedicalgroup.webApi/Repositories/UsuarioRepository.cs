@@ -49,5 +49,11 @@ namespace senai.spmedicalgroup.webApi.Repositories
         {
             return ctx.Usuarios.ToList();
         }
+
+        public Domains.UsuarioRepository Login(string email, string senha)
+        {
+            return ctx.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+        }
+
     }
 }
