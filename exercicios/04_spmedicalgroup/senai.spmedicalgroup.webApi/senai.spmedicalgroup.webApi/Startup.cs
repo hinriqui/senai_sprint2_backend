@@ -17,16 +17,16 @@ namespace senai.spmedicalgroup.webApi
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services
                 .AddControllers()
-                .AddNewtonsoftJson(options =>
-                {
-                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                });
+                 .AddNewtonsoftJson(options =>
+                 {
+                     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                     options.SerializerSettings.DefaultValueHandling = DefaultValueHandling.Ignore;
+                 });
 
             services.AddCors(options =>
             {
@@ -54,32 +54,27 @@ namespace senai.spmedicalgroup.webApi
 
             });
 
+
             services
-                .AddAuthentication(options =>
+            .AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = "JwtBearer";
+                options.DefaultChallengeScheme = "JwtBearer";
+            })
+
+            .AddJwtBearer("JwtBearer", options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
                 {
-                    options.DefaultAuthenticateScheme = "JwtBearer";
-                    options.DefaultChallengeScheme = "JwtBearer";
-                })
-
-                .AddJwtBearer("JwtBearer", options =>
-                {
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = true,
-
-                        ValidateAudience = true,
-
-                        ValidateLifetime = true,
-
-                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("chave-autenticacao")),
-
-                        ClockSkew = TimeSpan.FromHours(8),
-
-                        ValidIssuer = "spMedGroup.webAPI",
-
-                        ValidAudience = "spMedGroup.webAPI"
-                    };
-                });
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("spmg-chave-autenticacao")),
+                    ClockSkew = TimeSpan.FromHours(8),
+                    ValidIssuer = "spMedGroup.webAPI",
+                    ValidAudience = "spMedGroup.webAPI"
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -94,7 +89,7 @@ namespace senai.spmedicalgroup.webApi
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Hroads.webApi");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "spMedGroup.webApi");
                 c.RoutePrefix = string.Empty;
             });
 

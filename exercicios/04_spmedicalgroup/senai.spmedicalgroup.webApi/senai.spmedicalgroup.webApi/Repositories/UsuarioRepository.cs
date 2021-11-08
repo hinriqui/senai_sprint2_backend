@@ -28,7 +28,7 @@ namespace senai.spmedicalgroup.webApi.Repositories
             ctx.SaveChanges();
         }
 
-        public Domains.UsuarioRepository Buscar(string email)
+        public Domains.UsuarioRepository BuscarPorEmail(string email)
         {
             return ctx.Usuarios.FirstOrDefault(u => u.Email == email);
         }
@@ -50,10 +50,16 @@ namespace senai.spmedicalgroup.webApi.Repositories
             return ctx.Usuarios.ToList();
         }
 
-        public Domains.UsuarioRepository Login(string email, string senha)
+        public Domains.UsuarioRepository Logar(string email, string senha)
         {
-            return ctx.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
-        }
+            Domains.UsuarioRepository user = ctx.Usuarios.FirstOrDefault(u => u.Email == email);
 
+            if (user != null && user.Senha == senha)
+            {
+                return user;
+            }
+
+            return null;
+        }
     }
 }

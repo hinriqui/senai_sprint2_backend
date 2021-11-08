@@ -31,9 +31,7 @@ namespace senai.spmedicalgroup.webApi.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //optionsBuilder.UseSqlServer("Data Source=DESKTOP-BHEJL7O\\SQLEXPRESS; initial catalog=SP_MEDICAL_GROUP; user id=sa; pwd=qwerty;");
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-BHEJL7O\\SQLEXPRESS; initial catalog=SP_MEDICAL_GROUP; user id=sa; pwd=qwerty;");
-
             }
         }
 

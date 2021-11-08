@@ -71,3 +71,5 @@ C:\Users\Henrique\Desktop\senai_sprint2_backend\exercicios\04_spmedicalgroup\sen
 C:\Users\Henrique\Desktop\senai_sprint2_backend\exercicios\04_spmedicalgroup\senai.spmedicalgroup.webApi\senai.spmedicalgroup.webApi\obj\Debug\net5.0\ref\senai.spmedicalgroup.webApi.dll
 C:\Users\Henrique\Desktop\senai_sprint2_backend\exercicios\04_spmedicalgroup\senai.spmedicalgroup.webApi\senai.spmedicalgroup.webApi\obj\Debug\net5.0\senai.spmedicalgroup.webApi.pdb
 C:\Users\Henrique\Desktop\senai_sprint2_backend\exercicios\04_spmedicalgroup\senai.spmedicalgroup.webApi\senai.spmedicalgroup.webApi\obj\Debug\net5.0\senai.spmedicalgroup.webApi.genruntimeconfig.cache
+C:\Users\Henrique\Desktop\senai_sprint2_backend\exercicios\04_spmedicalgroup\senai.spmedicalgroup.webApi\senai.spmedicalgroup.webApi\bin\Debug\net5.0\senai.spmedicalgroup.webApi.xml
+C:\Users\Henrique\Desktop\senai_sprint2_backend\exercicios\04_spmedicalgroup\senai.spmedicalgroup.webApi\senai.spmedicalgroup.webApi\obj\Debug\net5.0\senai.spmedicalgroup.webApi.xml

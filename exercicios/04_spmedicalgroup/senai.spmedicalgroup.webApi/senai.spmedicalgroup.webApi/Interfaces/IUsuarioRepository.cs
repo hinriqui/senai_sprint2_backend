@@ -19,7 +19,15 @@ namespace senai.spmedicalgroup.webApi.Interfaces
         /// </summary>
         /// <param name="email">Email</param>
         /// <returns>O objeto com respectivo email</returns>
-        UsuarioRepository Buscar(string email);
+        UsuarioRepository BuscarPorEmail(string email);
+
+        /// <summary>
+        /// Retorna o usuário se condizente
+        /// </summary>
+        /// <param name="email">Email</param>
+        /// <param name="senha">Senha</param>
+        /// <returns>Objeto usuário</returns>
+        UsuarioRepository Logar(string email, string senha);
 
         /// <summary>
         /// Deleta o objeto com respectivo email
@@ -32,14 +40,6 @@ namespace senai.spmedicalgroup.webApi.Interfaces
         /// </summary>
         /// <param name="objAtualizado">Objeto atualizado</param>
         void Atualizar(UsuarioRepository objAtualizado);
-
-        /// <summary>
-        /// Verifica se email e senha estão cadastrados
-        /// </summary>
-        /// <param name="email">Email</param>
-        /// <param name="senha">Senha</param>
-        /// <returns></returns>
-        UsuarioRepository Login(string email, string senha);
 
         /// <summary>
         /// Cadastra um novo objeto

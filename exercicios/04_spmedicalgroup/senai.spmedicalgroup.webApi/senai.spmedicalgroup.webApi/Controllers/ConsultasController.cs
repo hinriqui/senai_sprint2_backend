@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace senai.spmedicalgroup.webApi.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class ConsultasController : ControllerBase
@@ -49,7 +50,7 @@ namespace senai.spmedicalgroup.webApi.Controllers
         /// Lê todas as consultas cadastrados para esse médico
         /// </summary>
         /// <returns>Lista de todos os objetos</returns>
-        [Authorize(Roles = "MED")]
+        [Authorize(Roles = "ADM")]
         [HttpGet("pac/{email}")]
         public IActionResult LerPac(string email)
         {
@@ -58,9 +59,21 @@ namespace senai.spmedicalgroup.webApi.Controllers
         }
 
         /// <summary>
+        /// Busca objeto atráves do ID
+        /// </summary>
+        /// <returns>Lista apenas o objeto selecionado</returns>
+        [Authorize(Roles = "ADM")]
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(int id)
+        {
+            return Ok(_Repository.BuscarPorId(id));
+        }
+
+        /// <summary>
         /// Cadastra um objeto
         /// </summary>
         /// <returns>Cadastra o objeto solicitado</returns>
+        [Authorize(Roles = "ADM")]
         [HttpPost]
         public IActionResult Cadastrar(Consultum obj)
         {
@@ -69,9 +82,12 @@ namespace senai.spmedicalgroup.webApi.Controllers
         }
 
         /// <summary>
-        /// Atualiza um objeto
+        /// Atualiza a descrição da descrição
         /// </summary>
-        /// <returns>Atualiza o objeto solicitado</returns>
+        /// <param name="obj">Objeto consulta com respectivo id</param>
+        /// <param name="descricao">Nova descrição</param>
+        /// <returns></returns>
+        [Authorize(Roles = "MED")]
         [HttpPut("{id}")]
         public IActionResult AtualizarDescricao(Consultum obj, string descricao)
         {
@@ -84,6 +100,7 @@ namespace senai.spmedicalgroup.webApi.Controllers
         /// Deleta um objeto
         /// </summary>
         /// <returns>Deleta o objeto solicitado</returns>
+        [Authorize(Roles = "ADM")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
