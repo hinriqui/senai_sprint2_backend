@@ -34,12 +34,11 @@
             </summary>
             <returns>Cadastra o objeto solicitado</returns>
         </member>
-        <member name="M:senai.spmedicalgroup.webApi.Controllers.ConsultasController.AtualizarDescricao(senai.spmedicalgroup.webApi.Domains.Consultum,System.String)">
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.ConsultasController.AtualizarDescricao(senai.spmedicalgroup.webApi.Domains.Consultum)">
             <summary>
             Atualiza a descrição da descrição
             </summary>
             <param name="obj">Objeto consulta com respectivo id</param>
-            <param name="descricao">Nova descrição</param>
             <returns></returns>
         </member>
         <member name="M:senai.spmedicalgroup.webApi.Controllers.ConsultasController.Deletar(System.Int32)">
