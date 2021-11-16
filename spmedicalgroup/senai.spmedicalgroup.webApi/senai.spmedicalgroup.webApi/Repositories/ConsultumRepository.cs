@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace senai.spmedicalgroup.webApi.Repositories
 {
@@ -49,17 +50,17 @@ namespace senai.spmedicalgroup.webApi.Repositories
 
         public List<Consultum> ListarTodos()
         {
-            return ctx.Consulta.ToList();
+            return ctx.Consulta.Include(c => c.IdMedicoNavigation).Include(c => c.IdPacienteNavigation).ToList();
         }
 
         public List<Consultum> ListarPorMed(int id)
         {
-            return ctx.Consulta.Where(u => u.IdMedico == id).ToList();
+            return ctx.Consulta.Where(u => u.IdMedico == id).Include(c => c.IdMedicoNavigation).Include(c => c.IdPacienteNavigation).ToList();
         }
 
         public List<Consultum> ListarPorPac(int id)
         {
-            return ctx.Consulta.Where(u => u.IdPaciente == id).ToList();
+            return ctx.Consulta.Where(u => u.IdPaciente == id).Include(c => c.IdMedicoNavigation).Include(c => c.IdPacienteNavigation).ToList();
         }
     }
 }
