@@ -62,7 +62,7 @@ namespace senai.spmedicalgroup.webApi.Controllers
         /// Busca objeto atráves do ID
         /// </summary>
         /// <returns>Lista apenas o objeto selecionado</returns>
-        [Authorize(Roles = "ADM")]
+        [Authorize(Roles = "ADM,MED")]
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {
